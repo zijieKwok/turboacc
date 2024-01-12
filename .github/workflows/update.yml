@@ -37,7 +37,7 @@ jobs:
             git clone --depth=1 --single-branch https://github.com/fullcone-nat-nftables/nft-fullcone $CLONE_PATH/fullcone-nat-nftables/nft-fullcone
             git clone --depth=1 --single-branch https://github.com/wongsyrone/lede-1 $CLONE_PATH/wongsyrone/lede-1
             git clone --depth=1 --single-branch https://github.com/coolsnowwolf/lede $CLONE_PATH/coolsnowwolf/lede
-            git clone --depth=1 --single-branch --branch "package" https://github.com/chenmozhijin/turboacc $CLONE_PATH/chenmozhijin/turboacc
+            git clone --depth=1 --single-branch --branch "package" https://github.com/zijieKwok/turboacc $CLONE_PATH/zijieKwok/turboacc
             git clone --depth=1 --single-branch --branch "master" https://github.com/openwrt/openwrt/ $CLONE_PATH/openwrt/openwrt/
 
         - name: 整理
@@ -45,34 +45,34 @@ jobs:
             #nft-fullcone
             rm -rf $CLONE_PATH/fullcone-nat-nftables/nft-fullcone/.git
             cp -RT $CLONE_PATH/fullcone-nat-nftables/nft-fullcone $COMPARE_PATH/new/nft-fullcone
-            cp -RT $CLONE_PATH/chenmozhijin/turboacc/nft-fullcone $COMPARE_PATH/original/nft-fullcone
+            cp -RT $CLONE_PATH/zijieKwok/turboacc/nft-fullcone $COMPARE_PATH/original/nft-fullcone
             #hack
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/new/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
             #cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
             # coolsnowwolf/lede#11211
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/new/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
             #cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
             # coolsnowwolf/lede#11211
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/new/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/pending-5.10/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/new/pending-5.10/613-netfilter_optional_tcp_window_check.patch
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/pending-5.15/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/new/pending-5.15/613-netfilter_optional_tcp_window_check.patch
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/pending-6.1/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/new/pending-6.1/613-netfilter_optional_tcp_window_check.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/original/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/original/hack-6.1/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
             #pending
-            cp $CLONE_PATH/chenmozhijin/turboacc/pending-5.10/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-5.10/613-netfilter_optional_tcp_window_check.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/pending-5.15/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-5.15/613-netfilter_optional_tcp_window_check.patch
-            cp $CLONE_PATH/chenmozhijin/turboacc/pending-6.1/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-6.1/613-netfilter_optional_tcp_window_check.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/pending-5.10/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-5.10/613-netfilter_optional_tcp_window_check.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/pending-5.15/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-5.15/613-netfilter_optional_tcp_window_check.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/pending-6.1/613-netfilter_optional_tcp_window_check.patch $COMPARE_PATH/original/pending-6.1/613-netfilter_optional_tcp_window_check.patch
             #shortcut-fe
             cp -RT $CLONE_PATH/coolsnowwolf/lede/package/lean/shortcut-fe $COMPARE_PATH/new/shortcut-fe
-            cp -RT $CLONE_PATH/chenmozhijin/turboacc/shortcut-fe $COMPARE_PATH/original/shortcut-fe
+            cp -RT $CLONE_PATH/zijieKwok/turboacc/shortcut-fe $COMPARE_PATH/original/shortcut-fe
             sed -i "s#DEPENDS:=@TARGET_ipq806x||TARGET_ipq807x +kmod-shortcut-fe#DEPENDS:=@TARGET_ipq806x||TARGET_ipq807x||TARGET_qualcommax +kmod-shortcut-fe#g" $COMPARE_PATH/new/shortcut-fe/simulated-driver/Makefile
             #firewall4 nftables libnftnl
             cp -RT $CLONE_PATH/openwrt/openwrt/package/network/config/firewall4/ $COMPARE_PATH/new/firewall4/
@@ -98,40 +98,40 @@ jobs:
             cp -RT $COMPARE_PATH/new/nftables/ $COMPARE_PATH/new/nftables-$NFTABLES_NEW_VERSION/nftables
             cp -RT $COMPARE_PATH/new/libnftnl/ $COMPARE_PATH/new/libnftnl-$LIBNFTNL_NEW_VERSION/libnftnl
             rm -rf $COMPARE_PATH/new/firewall4/ $COMPARE_PATH/new/nftables/ $COMPARE_PATH/new/libnftnl/
-            if [ -d "$CLONE_PATH/chenmozhijin/turboacc/firewall4-$FIREWALL4_NEW_VERSION" ]; then
-                cp -RT $CLONE_PATH/chenmozhijin/turboacc/firewall4-$FIREWALL4_NEW_VERSION $COMPARE_PATH/original/firewall4-$FIREWALL4_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/firewall4-* $OUTPUT_PATH/push/
+            if [ -d "$CLONE_PATH/zijieKwok/turboacc/firewall4-$FIREWALL4_NEW_VERSION" ]; then
+                cp -RT $CLONE_PATH/zijieKwok/turboacc/firewall4-$FIREWALL4_NEW_VERSION $COMPARE_PATH/original/firewall4-$FIREWALL4_NEW_VERSION
+                cp -r $CLONE_PATH/zijieKwok/turboacc/firewall4-* $OUTPUT_PATH/push/
                 rm -rf $OUTPUT_PATH/push/firewall4-$FIREWALL4_NEW_VERSION
             else
                 echo "firewall4有新版本$FIREWALL4_NEW_VERSION"
                 mkdir -p  $COMPARE_PATH/original/firewall4-$FIREWALL4_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/firewall4-* $OUTPUT_PATH/push/
+                cp -r $CLONE_PATH/zijieKwok/turboacc/firewall4-* $OUTPUT_PATH/push/
             fi
-            if [ -d "$CLONE_PATH/chenmozhijin/turboacc/nftables-$NFTABLES_NEW_VERSION" ]; then
-                cp -RT $CLONE_PATH/chenmozhijin/turboacc/nftables-$NFTABLES_NEW_VERSION $COMPARE_PATH/original/nftables-$NFTABLES_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/nftables-* $OUTPUT_PATH/push/
+            if [ -d "$CLONE_PATH/zijieKwok/turboacc/nftables-$NFTABLES_NEW_VERSION" ]; then
+                cp -RT $CLONE_PATH/zijieKwok/turboacc/nftables-$NFTABLES_NEW_VERSION $COMPARE_PATH/original/nftables-$NFTABLES_NEW_VERSION
+                cp -r $CLONE_PATH/zijieKwok/turboacc/nftables-* $OUTPUT_PATH/push/
                 rm -rf $OUTPUT_PATH/push/nftables-$NFTABLES_NEW_VERSION
             else
                 echo "nftables有新版本$NFTABLES_NEW_VERSION"
                 mkdir -p  $COMPARE_PATH/original/nftables-$NFTABLES_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/nftables-* $OUTPUT_PATH/push/
+                cp -r $CLONE_PATH/zijieKwok/turboacc/nftables-* $OUTPUT_PATH/push/
             fi
             #修复WARNING: 'automake-1.16' is probably too old.
             if [ "$(grep -c "# Network$" $COMPARE_PATH/new/libnftnl-$LIBNFTNL_NEW_VERSION/libnftnl/Makefile)" -eq '0' ];then
                 echo "添加PKG_FIXUP:=autoreconf"
                 sed -i '/PKG_LICENSE_FILES:=COPYING/a\PKG_FIXUP:=autoreconf' $COMPARE_PATH/new/libnftnl-$LIBNFTNL_NEW_VERSION/libnftnl/Makefile
             fi
-            if [ -d "$CLONE_PATH/chenmozhijin/turboacc/libnftnl-$LIBNFTNL_NEW_VERSION" ]; then
-                cp -RT $CLONE_PATH/chenmozhijin/turboacc/libnftnl-$LIBNFTNL_NEW_VERSION $COMPARE_PATH/original/libnftnl-$LIBNFTNL_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/libnftnl-* $OUTPUT_PATH/push/
+            if [ -d "$CLONE_PATH/zijieKwok/turboacc/libnftnl-$LIBNFTNL_NEW_VERSION" ]; then
+                cp -RT $CLONE_PATH/zijieKwok/turboacc/libnftnl-$LIBNFTNL_NEW_VERSION $COMPARE_PATH/original/libnftnl-$LIBNFTNL_NEW_VERSION
+                cp -r $CLONE_PATH/zijieKwok/turboacc/libnftnl-* $OUTPUT_PATH/push/
                 rm -rf $OUTPUT_PATH/push/libnftnl-$LIBNFTNL_NEW_VERSION
             else
                 echo "libnftnl有新版本$LIBNFTNL_NEW_VERSION"
                 mkdir -p  $COMPARE_PATH/original/libnftnl-$LIBNFTNL_NEW_VERSION
-                cp -r $CLONE_PATH/chenmozhijin/turboacc/libnftnl-* $OUTPUT_PATH/push/
+                cp -r $CLONE_PATH/zijieKwok/turboacc/libnftnl-* $OUTPUT_PATH/push/
             fi
             cp -RT $COMPARE_PATH/new/ $OUTPUT_PATH/test/
-            cp $CLONE_PATH/chenmozhijin/turboacc/README.md $OUTPUT_PATH/push/README.md
+            cp $CLONE_PATH/zijieKwok/turboacc/README.md $OUTPUT_PATH/push/README.md
             cp -RT $COMPARE_PATH/new/ $OUTPUT_PATH/push/
             ls -la $(find $GITHUB_WORKSPACE -type d)
 
@@ -260,7 +260,7 @@ jobs:
           - name: 添加turboacc
             working-directory: ${{ env.OPENWRT_ROOT_PATH }}
             run: |
-              curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
+              curl -sSL https://raw.githubusercontent.com/zijieKwok/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
               kernel_version="$(sed -n '/CONFIG_LINUX_/p' $OPENWRT_ROOT_PATH/.config | sed -e 's/CONFIG_LINUX_//' -e 's/=y//' -e 's/_/./g')"
               #log
               echo "libnftnl-file"
