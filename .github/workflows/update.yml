@@ -49,8 +49,8 @@ jobs:
             #hack
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.10/952-net-conntrack-events-support-multiple-registrant.patch
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/new/hack-5.10/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
-            #cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
-            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
+            #cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.15/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-add-net-conntrack-events-support-multiple-registrant.patch
+            cp $CLONE_PATH/zijieKwok/turboacc/hack-5.15/952-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-5.15/952-net-conntrack-events-support-multiple-registrant.patch
             # coolsnowwolf/lede#11211
             cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch $COMPARE_PATH/new/hack-5.15/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
             #cp $CLONE_PATH/coolsnowwolf/lede/target/linux/generic/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch $COMPARE_PATH/new/hack-6.1/952-add-net-conntrack-events-support-multiple-registrant.patch
