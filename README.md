@@ -33,10 +33,6 @@ make menuconfig
 2. 如不需要sfe可以删除953与613补丁。
 3. 默认的使用方法会把firewall4、libnftnl、nftables替换最新修补后的版本，如你遇到问题可以尝试使用旧版firewall4、libnftnl、nftables。（package分支中有旧版存档）
 
-## 插件预览
-
-![插件预览](https://raw.githubusercontent.com/zijieKwok/turboacc/luci/img/1.png)
-![效果预览](https://raw.githubusercontent.com/zijieKwok/turboacc/luci/img/2.png)
 
 ## 关于
 
