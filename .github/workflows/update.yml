@@ -39,6 +39,8 @@ jobs:
             git clone --depth=1 --single-branch https://github.com/coolsnowwolf/lede $CLONE_PATH/coolsnowwolf/lede
             git clone --depth=1 --single-branch --branch "package" https://github.com/zijieKwok/turboacc $CLONE_PATH/zijieKwok/turboacc
             git clone --depth=1 --single-branch --branch "master" https://github.com/openwrt/openwrt/ $CLONE_PATH/openwrt/openwrt/
+			git clone --depth=1 --single-branch --branch "istoreos-22.03" https://github.com/istoreos/istoreos/ $CLONE_PATH/istoreos/istoreos/
+			git clone --depth=1 --single-branch --branch "istoreos-23.05" https://github.com/istoreos/istoreos/ $CLONE_PATH/istoreos/istoreos/
 
         - name: 整理
           run: |
@@ -210,14 +212,14 @@ jobs:
     
           - name: 克隆源代码
             run: |
-                git clone https://git.openwrt.org/openwrt/openwrt.git
-                cd openwrt
+                git clone https://github.com/istoreos/istoreos.git
+                cd istoreos
                 export OPENWRT_ROOT_PATH="$(pwd)"
                 echo "OPENWRT_ROOT_PATH=$OPENWRT_ROOT_PATH" >> $GITHUB_ENV
     
           - name: 切换标签/分支
             run: |
-              if [ "${{ matrix.tag_branche }}" = "master-k6.1" ] || [ "${{ matrix.tag_branche }}" = "master-k5.15" ]; then
+              if [ "${{ matrix.tag_branche }}" = "istoreos-23.05" ] || [ "${{ matrix.tag_branche }}" = "istoreos-22.03" ]; then
                 tag_branche=master
               else
                 tag_branche=${{ matrix.tag_branche }}
