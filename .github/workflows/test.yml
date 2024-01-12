@@ -90,7 +90,7 @@ jobs:
           - name: 生成配置文件
             working-directory: ${{ env.OPENWRT_ROOT_PATH }}
             run: |
-              if [ "${{ matrix.tag_branche }}" = "istoreos-23.05" ]; then
+              if [ "${{ matrix.tag_branche }}" = "master-6.1" ]; then
                 echo "CONFIG_TARGET_qualcommax=y" >> $OPENWRT_ROOT_PATH/.config
                 echo "CONFIG_TARGET_qualcommax_ipq807x=y" >> $OPENWRT_ROOT_PATH/.config
                 echo "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_redmi_ax6=y" >> $OPENWRT_ROOT_PATH/.config
@@ -134,7 +134,7 @@ jobs:
               echo "compile = "${{ matrix.compile }}
               rm -rf .config .config.old tmp
               ls -la
-              if [ "${{ matrix.tag_branche }}" = "istoreos-23.05" ]; then
+              if [ "${{ matrix.tag_branche }}" = "master-6.1" ]; then
                 echo "CONFIG_TARGET_qualcommax=y" >> $OPENWRT_ROOT_PATH/.config
                 echo "CONFIG_TARGET_qualcommax_ipq807x=y" >> $OPENWRT_ROOT_PATH/.config
                 echo "CONFIG_TARGET_qualcommax_ipq807x_DEVICE_redmi_ax6=y" >> $OPENWRT_ROOT_PATH/.config
@@ -197,7 +197,7 @@ jobs:
     #          elif [ "${{ matrix.tag_branche }}" = "istoreos-23.05" ] || [ "${{ matrix.tag_branche }}" = "v23.05.2" ]; then
     #            RELEASE=releases/v23.05.2
     #          elif [ "${{ matrix.tag_branche }}" = "istoreos-22.03" ] || [ "${{ matrix.tag_branche }}" = "v22.03.6" ]; then
-    #            RELEASE=releases/v22.03.6
+    #            RELEASE=releases/22.03.6
     #          fi
     #          FILE_NAME=$(curl -s -L --retry 3 --connect-timeout 20 https://downloads.openwrt.org/snapshots/targets/$CONFIG_TARGET_BOARD/$CONFIG_TARGET_SUBTARGET/ | grep -m 1 -o "openwrt-toolchain-${CONFIG_TARGET_BOARD}-${CONFIG_TARGET_SUBTARGET}_gcc[^\"]*\.Linux-${CONFIG_TARGET_BOARD}_${CONFIG_TARGET_SUBTARGET}\.tar\.xz" | sed 's/^.*<a href="//' | sort -u)
     #          curl -L --retry 3 --connect-timeout 20 https://downloads.openwrt.org/$RELEASE/targets/$CONFIG_TARGET_BOARD/$CONFIG_TARGET_SUBTARGET/$FILE_NAME -o staging_dir/toolchain.tar.xz
