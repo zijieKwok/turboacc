@@ -210,7 +210,7 @@ jobs:
     
           - name: 克隆源代码
             run: |
-                git clone https://github.com/zijieKwok/istoreos23.05.git
+                git clone https://github.com/zijieKwok/istoreos.git
                 cd istoreos
                 export OPENWRT_ROOT_PATH="$(pwd)"
                 echo "OPENWRT_ROOT_PATH=$OPENWRT_ROOT_PATH" >> $GITHUB_ENV
